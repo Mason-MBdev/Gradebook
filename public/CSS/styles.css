@@ -1,0 +1,506 @@
+:root {
+    --containercolor: rgb(224, 224, 224);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f1ecec;
+}
+
+h1 {
+    font-size: 36px;
+    margin: 0;
+    padding: 0;
+    margin-left: 10px;
+    color: #fff;
+}
+
+h2 {
+    margin: 0;
+}
+
+p {
+    font-size: 19px;
+}
+
+.graph-button-box {
+    display: flex;
+    justify-content: left;
+}
+
+.graph-button {
+    background-color: rgb(59, 59, 68);
+    color: white;
+    border: none;
+    padding: 7px 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    font-size: 16px;
+    border: 2px rgb(122, 122, 122) solid;
+}
+
+.graph-button:hover {
+    background-color: #c2f8c5;
+    color: black;
+}
+
+.graph-button:active {
+    background-color: #3e8e41;
+}
+
+.course-operation-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.nav-button-container {
+    display: flex;
+    justify-content: left;
+    background-color: rgb(59, 59, 68);
+    color: white;
+    font-size: 10px;
+    margin: 0;
+    align-items: center;
+}
+
+.nav-button-container button {
+    background-color: rgb(59, 59, 68);
+    color: white;
+    border: 1px solid white;    
+    font-size: 13px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 125px;
+}
+
+.nav-button-container button:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+.nav-button-container h2{
+    margin: 0;
+}
+
+.nav-title-container {
+    display: flex;
+    justify-content: left;
+    color: white;
+    font-size: 14px;
+    font-weight: normal;
+    align-items: center;
+    flex: 30%;
+    text-align: center;
+    align-items: center;
+    display: flex;
+    gap: 200px;
+}
+
+.nav-title-container h3{
+    margin: 0;
+}
+
+
+.nav-element {
+    position: sticky;
+    top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(59, 59, 68);
+    padding: 10px 20px;
+    gap:20px;
+}
+
+.title {
+    font-size: 24px;
+}
+.grades, .assignments {
+    margin-bottom: 20px;
+}
+.assignments-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.assignments-table th, .assignments-table td {
+    border: 1px solid #000000;
+    padding: 8px;
+}
+.assignments-table th {
+    background-color: #cfcfcf;
+}
+.assignments-table td {
+    text-align: center;
+    background-color: #ffffff;
+}
+.add-assignment {
+    background-color: #57e486;
+    cursor: pointer;
+}
+
+.add-assignment:hover {
+    background-color: #b6f4cb;
+}
+
+input, button {
+    padding: 8px;
+    margin: 5px;
+}
+.editable {
+    padding: 5px;
+    margin: 2px;
+}
+
+h2.title {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: 29px;
+}
+
+.card h2.title {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    font-size: 27px;
+    margin-bottom: 10px;
+}
+
+
+.collapse-arrow {
+    cursor: pointer;
+    font-size: 18px;
+    margin-left: 10px;
+    margin-bottom: 6px;
+}
+
+.card {
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 30px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: var(--containercolor);
+}
+
+.replica-course-container {
+    border: 1px solid #000000;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    display: grid;
+    background-color: var(--containercolor);
+}
+
+.card .grades, .card .assignments {
+    display: block;
+}
+
+.card .collapsed-view {
+    display: none;
+}
+
+.course-statistics {
+    margin-bottom: 20px;
+}
+
+.course-statistics p {
+    font-size: 16px;
+    color: #555;
+    margin: 0;
+}
+
+.graphbox {
+    width: 875px;
+    height: 450px;
+    margin-top: 15px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    border: black 1px solid;
+    display: flex;
+    flex-direction: row;
+    max-width: 97%;
+}
+
+.graphbox canvas {
+    height: 100%;
+    background-color: #ffffff;
+    width: 100%;
+}
+
+#overall-gpa, #overall-credits, #overall-courses {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.collapse-arrow {
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.collapse-arrow.collapsed {
+    transform: rotate(180deg);
+}
+
+.course-statistics {
+    margin-bottom: 20px;
+}
+
+.course-statistics p {
+    font-size: 16px;
+    color: #555;
+    margin: 0;
+}
+
+.graphbox div {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.overall-course-statistics {
+    background-color: var(--containercolor);
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: black 1px solid;
+}
+
+.collapsed-view {
+    display: none;
+    font-size: 16px;
+    color: #555;
+    gap: 20px;
+}
+
+.collapse-container {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    cursor: pointer;
+}
+
+.collapse-arrow {
+    font-size: 18px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.collapse-arrow.collapsed {
+    transform: rotate(180deg);
+}
+
+.overall-statistics-content {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+#main-window {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    gap: 30px;
+}
+
+#main-window .overall-course-statistics {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.course-statistics {
+    margin-bottom: 20px;
+}
+
+.course-statistics h2 {
+    font-size: 21px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.course-statistics p {
+    font-size: 20px;
+    color: #555;
+    margin: 0;
+}
+
+.delete-assignment {
+    margin: 0;
+    padding: 1px 5px;
+    background-color: #ec8888;
+    cursor: pointer;
+}
+
+.delete-assignment:hover {
+    background-color: #f4bcbc;
+}
+
+.delete-course-button {
+    background-color: rgb(237, 100, 100);
+    width: 120px;
+    cursor: pointer;
+}
+
+.delete-course-button:hover {
+    background-color: rgb(237, 167, 167);
+}
+
+.delete-course-button-show {
+    background-color: rgb(229, 105, 105);
+    width: 120px;
+    cursor: pointer;
+}
+
+.delete-course-button-show:hover {
+    background-color: rgb(235, 157, 157);
+}
+
+.add-course-button {
+    background-color: #57e486;
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(59, 59, 68);
+    z-index: 9998;
+    margin: 62px auto;
+    padding: 20px;
+    width: 270px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
+    border-top: 1px solid #888;
+}
+
+.close-popup {
+    color: #000000;
+    font-size: 32px;
+    font-weight: bold;
+    float: right;
+    cursor: pointer;
+    margin-top: -5px;
+}
+
+.close-popup:hover,
+.close-popup:focus {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.popup input[type="text"],
+.popup input[type="number"],
+.popup input[type="email"],
+.popup input[type="password"]{
+    background-color: #c0bebe;
+    color: #000000;
+    padding: 10px;
+    border: #000000 1px solid;
+    border-radius: 5px;
+    width: calc(100% - 22px);
+    font-size: 16px;
+    margin-left: 0;
+}
+
+.popup-button {
+    background-color: rgb(59, 59, 68);
+    color: white;
+    border: 1px solid white;
+    font-size: 13px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 125px;
+    margin-left: 0;
+}
+
+.popup-button:hover {
+    background-color: #ffffff;
+    color: black;
+}
+
+.progression-gradient {
+    height: 80%;
+    width: 10px;
+    margin-top: 20px;
+    border-radius: 5px;
+    justify-self: center;
+}
+
+/* mobile styling */
+@media (max-width: 768px) {
+    .nav-button-container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    .nav-title-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-element {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .graphbox {
+        flex-direction: column;
+        height: auto;
+        width: auto;
+    }
+
+    .graphbox canvas {
+        height: auto;
+    }
+
+    .overall-course-statistics {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .overall-statistics-content {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .course-statistics p {
+        font-size: 18px;
+    }
+
+    .assignments-table th, .assignments-table td {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    .popup {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    #save-navbtn {
+        display: none;
+    }
+
+    #load-navbtn {
+        display: none;
+    }
+}

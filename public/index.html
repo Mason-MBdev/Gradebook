@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradebook</title>
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+    <!-- Nav, contains title and meta operation buttons -->
+    <div class="nav-element">
+        <div class="nav-title-container">
+            <h1> <i class="fa-solid fa-book"></i> Gradebook </h1>
+        </div>
+
+        <div class="nav-button-container">
+            <button id="cloud-save-navbtn" class="logged-in" style="display: none;" title="Save data to your account">Cloud Save&nbsp;&nbsp;&nbsp;<i class="fa fa-cloud"></i></button>
+            <button id="login-navbtn" class="logged-out">Log in&nbsp;&nbsp;&nbsp;<i class="fa fa-sign-in"></i></button>
+            <button id="signup-navbtn" class="logged-out">Sign up&nbsp;&nbsp;&nbsp;<i class="fa fa-user-plus"></i></button>
+            <button id="signout-navbtn" class="logged-in" style="display: none;">Sign out&nbsp;&nbsp;&nbsp;<i class="fa fa-sign-out"></i></button>
+        </div>
+
+        <div class="nav-button-container">
+            <!-- <button id="save-navbtn" title="Save all data to downloads folder">Save&nbsp;&nbsp;&nbsp;<i class="fa fa-save"></i></button> -->
+            <!-- <button id="load-navbtn" title="Load data from a previous save file">Load&nbsp;&nbsp;&nbsp;<i class="fa fa-folder-open"></i></button> -->
+        </div>
+    </div>
+
+    <!-- Main window for all user flow -->
+    <div id="main-window">
+
+        <!-- Overall course stats, contains different views, graphs, and stats -->
+        <div class="overall-course-statistics">
+            <div class="collapse-container">
+                <h2 class="title" contenteditable="true" data-type="title" data-id="overall-statistics-title">Overall Course Statistics</h2>
+                <span class="collapse-arrow" onclick="toggleOverallStats()">&#9650;</span> <!-- Initially pointing downwards -->
+            </div>
+
+            <!-- collapsed view -->
+            <div class="collapsed-view">
+                <p><strong>Overall Grade:</strong> <span id="collapsed-grade">N/A</span></p>
+                <p><strong>Completed Weight:</strong> <span id="collapsed-completed-weight">N/A</span></p>
+                <p><strong>Assignments Completed:</strong> <span id="collapsed-assignments-completed">N/A</span></p>
+            </div>
+
+            <!-- expanded view -->
+            <div class="overall-statistics-content">
+                <div class="course-statistics">
+                    <h2>Overall Grade:</h2>
+                    <p id="overall-grade">N/A</p>
+                </div>
+                <div class="course-statistics">
+                    <h2>Completed Weight:</h2>
+                    <p id="overall-completed-weight">N/A</p>
+                </div>
+                <div class="course-statistics">
+                    <h2>Assignments Completed:</h2>
+                    <p id="overall-assignments-complete">N/A</p>
+                </div>
+            </div>
+
+            <!-- self explanitory -->
+            <h2 id="graph-title" style="margin-top: 30px">Graphs</h2>
+            <div id="graph-button-box" class="graph-button-box">
+                <button class="graph-button" id="graph-grades-button">Grades</button>
+                <button class="graph-button" id="graph-weight-button">Weight</button>
+                <button class="graph-button" id="graph-completion-button">Completion</button>
+            </div>
+            <div class="graphbox" style="resize: both; overflow: auto;"></div>
+        </div>
+
+        <!-- container for all course elements -->
+        <div class="course-display"></div>
+
+        <!-- container for add-course button -->
+        <div class="replica-course-container">
+            <button class="add-assignment" id="add-course-btn" class="add-course-btn">Add Course +</button>
+        </div>
+    </div>
+
+    <!-- popup for login / signup -->
+    <div class="popup login-popup">
+        <span id="close-login-popup" class="close-popup">&times;</span>
+        <h2 style="color: white;">Log in</h2><br/>
+        <form id="login-form">
+            <div class="input">
+                <input type="email" id="login-email" placeholder = "Email" required />
+            </div>
+            <div style="margin-bottom: 20px;" >
+                <input type="password" id="login-password" placeholder = "Password" required />
+            </div>
+            <button class="popup-button">Log in</button>
+        </form>
+    </div>
+
+    <div class="popup signup-popup">
+        <span id="close-signup-popup" class="close-popup">&times;</span>
+        <h2 style="color: white;">Sign up</h2><br/>
+        <form id="signup-form">
+            <div class="input">
+                <input type="email" id="signup-email" placeholder = "Email" required />
+            </div>
+            <div style="margin-bottom: 20px;" >
+                <input type="password" id="signup-password" placeholder = "Password" required />
+            </div>
+            <button class="popup-button">Sign up</button>
+        </form>
+    </div>
+
+    <script src="./JS/main.js"></script>
+    <script type="module" src="./JS/auth.js"></script>
+
+</body>
+</html>
