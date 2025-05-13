@@ -1,54 +1,198 @@
 :root {
-    --containercolor: rgb(255, 255, 255);
+    /* Default Theme - Enhanced contrast */
+    --containercolor: rgb(240, 240, 240);
+    --body-bg: rgb(230, 230, 230);
+    --nav-bg: rgb(44, 44, 56);
+    --nav-text: #ffffff;
+    --title-text: #ffffff; /* High contrast title text for nav bar */
+    --popup-text: #ffffff; /* Text color specifically for popups */
+    --popup-heading: #ffffff; /* Heading color for popups */
+    --popup-label: rgba(255, 255, 255, 0.9); /* Label color for popups */
+    --card-bg: #ffffff;
+    --button-primary: #2a9d50;
+    --button-hover: #39ce6a;
+    --graph-btn-bg: rgb(59, 59, 68);
+    --graph-btn-text: white;
+    --table-header: #e6e6e6;
+    --table-cell: #ffffff;
+    --text-primary: #333333;
+    --text-secondary: #555555;
+    --border-color: rgba(0, 0, 0, 0.1);
+    --stats-bg: rgba(0, 0, 0, 0.05);
+    --highlight-bg: rgba(42, 157, 80, 0.1);
+}
+
+/* Dark Theme - Improved contrast */
+body.dark-theme {
+    --body-bg: #121212;
+    --containercolor: #1e1e1e;
+    --nav-bg: #000000;
+    --nav-text: #ffffff;
+    --title-text: #ffffff; /* High contrast title text for nav bar */
+    --popup-text: #ffffff; /* Text color specifically for popups */
+    --popup-heading: #ffffff; /* Heading color for popups */
+    --popup-label: rgba(255, 255, 255, 0.9); /* Label color for popups */
+    --card-bg: #2d2d2d;
+    --button-primary: #4ade80;
+    --button-hover: #22c55e;
+    --graph-btn-bg: #2d2d30;
+    --graph-btn-text: #ffffff;
+    --table-header: #3a3a3c;
+    --table-cell: #2d2d2d;
+    --text-primary: #ffffff;
+    --text-secondary: #b0b0b0;
+    --border-color: rgba(255, 255, 255, 0.1);
+    --stats-bg: rgba(255, 255, 255, 0.07);
+    --highlight-bg: rgba(74, 222, 128, 0.1);
+    color: var(--text-primary);
+}
+
+/* Oceanic Theme - Enhanced contrast */
+body.oceanic-theme {
+    --body-bg: #e0f2fe;
+    --containercolor: #f0f9ff;
+    --nav-bg: #075985;
+    --nav-text: #ffffff;
+    --title-text: #ffffff; /* High contrast title text for nav bar */
+    --popup-text: #ffffff; /* Text color specifically for popups */
+    --popup-heading: #ffffff; /* Heading color for popups */
+    --popup-label: rgba(255, 255, 255, 0.9); /* Label color for popups */
+    --card-bg: #ffffff;
+    --button-primary: #0369a1;
+    --button-hover: #0284c7;
+    --graph-btn-bg: #0c4a6e;
+    --graph-btn-text: #ffffff;
+    --table-header: #bae6fd;
+    --table-cell: #ffffff;
+    --text-primary: #075985;
+    --text-secondary: #0c4a6e;
+    --border-color: rgba(12, 74, 110, 0.2);
+    --stats-bg: rgba(12, 74, 110, 0.05);
+    --highlight-bg: rgba(3, 105, 161, 0.1);
+    color: var(--text-primary);
+}
+
+/* Warm Theme - Enhanced contrast */
+body.warm-theme {
+    --body-bg: #fffbeb;
+    --containercolor: #fef3c7;
+    --nav-bg: #7c2d12;
+    --nav-text: #ffffff;
+    --title-text: #ffffff; /* High contrast title text for nav bar */
+    --popup-text: #ffffff; /* Text color specifically for popups */
+    --popup-heading: #ffffff; /* Heading color for popups */
+    --popup-label: rgba(255, 255, 255, 0.9); /* Label color for popups */
+    --card-bg: #ffffff;
+    --button-primary: #b45309;
+    --button-hover: #d97706;
+    --graph-btn-bg: #7c2d12;
+    --graph-btn-text: #ffffff;
+    --table-header: #eea557;
+    --table-cell: #ffffff;
+    --text-primary: #7c2d12;
+    --text-secondary: #92400e;
+    --border-color: rgba(146, 64, 14, 0.2);
+    --stats-bg: rgba(146, 64, 14, 0.05);
+    --highlight-bg: rgba(180, 83, 9, 0.1);
+    color: var(--text-primary);
+}
+
+/* Minimal Theme - Enhanced contrast */
+body.minimal-theme {
+    --body-bg: #f8fafc;
+    --containercolor: #ffffff;
+    --nav-bg: #e2e8f0;
+    --nav-text: #1e293b;
+    --title-text: #000000; /* High contrast title text for nav bar (dark for light bg) */
+    --popup-text: #1e293b; /* Text color specifically for popups */
+    --popup-heading: #000000; /* Heading color for popups */
+    --popup-label: rgba(0, 0, 0, 0.8); /* Label color for popups */
+    --card-bg: #ffffff;
+    --button-primary: #475569;
+    --button-hover: #64748b;
+    --graph-btn-bg: #334155;
+    --graph-btn-text: #ffffff;
+    --table-header: #f1f5f9;
+    --table-cell: #ffffff;
+    --text-primary: #1e293b;
+    --text-secondary: #475569;
+    --border-color: rgba(30, 41, 59, 0.1);
+    --stats-bg: rgba(30, 41, 59, 0.03);
+    --highlight-bg: rgba(71, 85, 105, 0.1);
+    color: var(--text-primary);
+}
+
+/* Low Contrast Theme - Soft and gentle on the eyes */
+body.low-contrast-theme {
+    --body-bg: #1a1a1a;
+    --containercolor: #212121;
+    --nav-bg: #141414;
+    --nav-text: #888888;
+    --title-text: #888888; 
+    --popup-text: #888888; 
+    --popup-heading: #888888; 
+    --popup-label: rgba(136, 136, 136, 0.9);
+    --card-bg: #1e1e1e;
+    --button-primary: #3a4a40;
+    --button-hover: #4a6051;
+    --graph-btn-bg: #242424;
+    --graph-btn-text: #888888;
+    --table-header: #242424;
+    --table-cell: #1e1e1e;
+    --text-primary: #777777;
+    --text-secondary: #555555;
+    --border-color: rgba(255, 255, 255, 0.05);
+    --stats-bg: rgba(255, 255, 255, 0.02);
+    --highlight-bg: rgba(58, 74, 64, 0.15);
+    color: var(--text-primary);
 }
 
 body {
     margin: 0;
     padding: 0;
-    background-color: #ffffff;
+    background-color: var(--body-bg);
     font-family: 'Arial', sans-serif;
+    font-size: var(--font-size-base, 16px);
+    color: var(--text-primary);
 }
 
-h1 {
-    font-size: 25px;
-    margin: 0;
-    padding: 0;
-    margin-left: 10px;
-    color: #fff;
-}
-
-h2 {
-    margin: 0;
-    font-size: 20px;
+h1, h2, h3, h4, h5, h6 {
+    color: var(--text-primary);
 }
 
 p {
-    font-size: 16px;
+    color: var(--text-secondary);
+    font-size: var(--font-size-p, 16px);
 }
 
 .graph-button-box {
     display: flex;
     justify-content: left;
+    gap: 10px;
+    margin-bottom: 15px;
 }
 
 .graph-button {
-    background-color: rgb(59, 59, 68);
-    color: white;
+    background-color: var(--graph-btn-bg);
+    color: var(--graph-btn-text);
     border: none;
-    padding: 7px 10px;
-    border-radius: 2px;
+    padding: 10px 16px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 16px;
-    border: 2px rgb(122, 122, 122) solid;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .graph-button:hover {
-    background-color: #c2f8c5;
-    color: black;
+    background-color: var(--button-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .graph-button:active {
-    background-color: #3e8e41;
+    transform: translateY(0);
 }
 
 .course-operation-buttons {
@@ -60,17 +204,17 @@ p {
 .nav-button-container {
     display: flex;
     justify-content: left;
-    background-color: rgb(59, 59, 68);
-    color: white;
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
     font-size: 10px;
     margin: 0;
     align-items: center;
 }
 
 .nav-button-container button {
-    background-color: rgb(59, 59, 68);
-    color: white;
-    border: 1px solid white;    
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    border: 1px solid var(--nav-text);    
     font-size: 13px;
     cursor: pointer;
     padding: 5px 10px;
@@ -102,6 +246,17 @@ p {
     gap: 200px;
 }
 
+.nav-title-container h1 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 0;
+}
+
+.nav-title-container i {
+    font-size: 1.2em;
+}
+
 .nav-title-container h3{
     margin: 0;
 }
@@ -113,9 +268,14 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: rgb(59, 59, 68);
-    padding: 10px 20px;
-    gap:20px;
+    background-color: var(--nav-bg);
+    padding: 0px 24px;
+    border-bottom: 1px solid rgb(139, 139, 139);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    gap: 20px;
+    z-index: 100;
+    height: 57px;
+    align-items: center;
 }
 
 .title {
@@ -126,26 +286,39 @@ p {
 }
 .assignments-table {
     width: 100%;
-    border-collapse: collapse;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    table-layout: fixed;
+    margin-top: 16px;
+    border: 1px solid var(--border-color);
 }
 .assignments-table th, .assignments-table td {
-    border: 1px solid #000000;
-    padding: 8px;
+    padding: 10px;
+    background-color: var(--table-cell);
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
 }
 .assignments-table th {
-    background-color: #cfcfcf;
+    background-color: var(--table-header);
+    padding: 12px 10px;
+    font-weight: 600;
+    color: var(--text-primary);
+    border-bottom: 2px solid var(--border-color);
 }
 .assignments-table td {
     text-align: center;
-    background-color: #ffffff;
+    background-color: var(--table-cell);
 }
 .add-assignment {
-    background-color: #57e486;
+    background-color: var(--button-primary);
     cursor: pointer;
 }
 
 .add-assignment:hover {
-    background-color: #b6f4cb;
+    background-color: var(--button-hover);
 }
 
 input, button {
@@ -156,8 +329,18 @@ input, button {
     
 }
 .editable {
-    padding: 5px;
-    margin: 2px;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.editable:hover {
+    background-color: var(--highlight-bg);
+}
+
+.editable:focus {
+    background-color: var(--highlight-bg);
+    outline: 2px solid var(--button-primary);
 }
 
 h2.title {
@@ -172,7 +355,6 @@ h2.title {
     margin: 0;
     padding: 0;
     font-size: 22px;
-    margin-bottom: 10px;
 }
 
 
@@ -184,33 +366,189 @@ h2.title {
 }
 
 .card {
-    border: 1px solid #000000;
-    padding: 15px;
-    margin-bottom: 18px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: var(--containercolor);
-    width:50vw;
+    border: none;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background-color: var(--card-bg);
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid var(--border-color);
 }
 
-.replica-course-container {
-    border: 1px solid #000000;
-    border-radius: 5px;
-    padding: 15px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    justify-content: center;
-    justify-items: center;
+.card h2.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: inherit;
+}
+
+.course-header {
+    display: flex;
+    justify-content: space-between;
     align-items: center;
+}
+
+.course-stats-grid {
     display: grid;
-    background-color: var(--containercolor);
-    width:50vw;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 16px;
+    background-color: var(--stats-bg);
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
 }
 
-.card .grades, .card .assignments {
-    display: block;
+.course-stat-item {
+    display: flex;
+    flex-direction: column;
 }
 
+.course-stat-label {
+    font-size: 13px;
+    color: var(--text-secondary);
+    margin-bottom: 4px;
+    font-weight: 500;
+}
+
+.course-stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* Enhanced assignments table */
+.assignments-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    table-layout: fixed;
+    margin-top: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.assignments-table th, 
+.assignments-table td {
+    padding: 10px;
+    border: none;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.assignments-table th:nth-child(1),
+.assignments-table td:nth-child(1) {
+    width: 40%;
+}
+
+.assignments-table th:nth-child(2),
+.assignments-table td:nth-child(2),
+.assignments-table th:nth-child(3),
+.assignments-table td:nth-child(3) {
+    width: 20%;
+    text-align: center;
+}
+
+.assignments-table th:nth-child(4),
+.assignments-table td:nth-child(4) {
+    width: 20%;
+    text-align: center;
+}
+
+.assignments-table td {
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--table-cell);
+}
+
+.assignments-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Course operations buttons */
+.card .course-operation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.add-assignment {
+    background-color: var(--button-primary);
+    color: white;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.add-assignment:hover {
+    background-color: var(--button-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+.delete-course-button-show, .delete-course-button {
+    background-color: #ec8888;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.delete-course-button-show:hover, .delete-course-button:hover {
+    background-color: #f4bcbc;
+}
+
+.delete-assignment {
+    padding: 5px 8px;
+    border-radius: 4px;
+    background-color: #ec8888;
+    border: none;
+    color: white;
+}
+
+/* Course progress bar */
+.course-progress-container {
+    height: 6px;
+    background-color: var(--border-color);
+    border-radius: 3px;
+    margin-top: 12px;
+    overflow: hidden;
+}
+
+.course-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--button-primary) 0%, var(--button-hover) 100%);
+    border-radius: 3px;
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Collapsed view styling */
 .card .collapsed-view {
     display: none;
+    justify-content: space-between;
+    background-color: var(--stats-bg);
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+}
+
+.card .collapsed-view span {
+    padding: 6px 10px;
+    background-color: var(--button-primary);
+    color: white;
+    border-radius: 4px;
+    font-weight: 600;
 }
 
 .course-statistics {
@@ -224,22 +562,25 @@ h2.title {
 }
 
 .graphbox {
-    width: 875px;
-    height: 450px;
+    width: 100%;
+    height: 400px;
     margin-top: 15px;
-    background-color: #ffffff;
-    border-radius: 8px;
+    background-color: var(--card-bg);
+    border-radius: 10px;
     padding: 20px;
-    border: black 1px solid;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     display: flex;
-    flex-direction: row;
-    max-width: 97%;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: hidden;
 }
 
 .graphbox canvas {
-    height: 100%;
+    width: 100% !important;
+    height: auto !important;
+    aspect-ratio: 16/9;
     background-color: #ffffff;
-    width: 100%;
 }
 
 #overall-gpa, #overall-credits, #overall-courses {
@@ -275,13 +616,15 @@ h2.title {
 }
 
 .overall-course-statistics {    
-    background-color: var(--containercolor);
+    background-color: var(--card-bg);
     display: flex;
-    justify-content: space-between;
-    padding: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border: black 1px solid;
-    width:50vw;
+    flex-direction: column;
+    padding: 24px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .collapsed-view {
@@ -293,15 +636,26 @@ h2.title {
 
 .collapse-container {
     display: flex;
-    justify-content: left;
+    justify-content: space-between;
     align-items: center;
     cursor: pointer;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    margin-bottom: 15px;
 }
 
 .collapse-arrow {
     font-size: 18px;
     cursor: pointer;
     transition: transform 0.3s ease;
+    padding: 5px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.05);
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .collapse-arrow.collapsed {
@@ -310,23 +664,109 @@ h2.title {
 
 .overall-statistics-content {
     display: flex;
-    flex-direction: row;
-    gap: 50px;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.stats-section {
+    padding: 16px;
+    background-color: var(--stats-bg);
+    border-radius: 8px;
+    margin-bottom: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.stats-section h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: var(--text-secondary);
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.stat-value {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.progress-bar-container {
+    height: 8px;
+    background-color: var(--border-color);
+    border-radius: 4px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--button-primary) 0%, var(--button-hover) 100%);
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.5s ease-in-out;
 }
 
 #main-window {
     display: flex;
-    flex-direction: column;
-    padding: 20px;
-    padding-left: 30px;
-    padding-right: 30px;
-    gap: 30px;
+    flex-direction: row;
+    max-width: 100%;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 30px auto;
+    padding: 0 5%;
+}
+
+#main-window > * {
+    width: 60%;
 }
 
 #main-window .overall-course-statistics {
+    margin-bottom: 20px;
+}
+
+.course-display {
+    grid-area: courses;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 20px;
+}
+
+.replica-course-container {
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    display: grid;
+    background-color: var(--card-bg);
+    width: 100%;
+    box-sizing: border-box;
+    height: 161px;
+}
+
+.add-course-button {
+    background-color: #57e486;
 }
 
 .course-statistics {
@@ -336,7 +776,7 @@ h2.title {
 .course-statistics h2 {
     font-size: 18px;
     margin-top: 15px;
-    color: #333;
+    margin-bottom: 5px;
 }
 
 .course-statistics p {
@@ -356,30 +796,6 @@ h2.title {
     background-color: #f4bcbc;
 }
 
-.delete-course-button {
-    background-color: rgb(237, 100, 100);
-    width: 120px;
-    cursor: pointer;
-}
-
-.delete-course-button:hover {
-    background-color: rgb(237, 167, 167);
-}
-
-.delete-course-button-show {
-    background-color: rgb(229, 105, 105);
-    width: 120px;
-    cursor: pointer;
-}
-
-.delete-course-button-show:hover {
-    background-color: rgb(235, 157, 157);
-}
-
-.add-course-button {
-    background-color: #57e486;
-}
-
 .popup {
     display: none;
     position: fixed;
@@ -388,17 +804,70 @@ h2.title {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgb(59, 59, 68);
+    background-color: var(--nav-bg);
+    color: var(--popup-text);
     z-index: 9998;
     margin: 57px auto;
-    padding: 20px;
-    width: 270px;
-    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
-    border-top: 1px solid #888;
+    padding: 24px;
+    width: 300px;
+    border-top: 1px solid rgb(139, 139, 139);
+}
+
+.popup h2 {
+    color: var(--popup-heading);
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.popup h3 {
+    color: var(--popup-heading);
+    margin-bottom: 15px;
+}
+
+.popup p, 
+.popup span, 
+.popup div:not(.popup-button):not(.settings-button) {
+    color: var(--popup-text);
+}
+
+.popup input[type="text"],
+.popup input[type="number"],
+.popup input[type="email"],
+.popup input[type="date"],
+.popup input[type="password"] {
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #333;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    width: calc(100% - 26px);
+    font-size: 16px;
+    margin-left: 0;
+    margin-bottom: 12px;
+}
+
+.setting-item label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--popup-label);
+}
+
+.settings-section {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.settings-section h3 {
+    font-size: var(--font-size-h3, 18px);
+    color: var(--popup-heading);
 }
 
 .close-popup {
-    color: #000000;
+    color: var(--popup-text);
     font-size: 32px;
     font-weight: bold;
     float: right;
@@ -406,83 +875,143 @@ h2.title {
     margin-top: -5px;
 }
 
-.close-popup:hover,
-.close-popup:focus {
-    color: #ffffff;
-    text-decoration: none;
-}
-
-.popup input[type="text"],
-.popup input[type="number"],
-.popup input[type="email"],
-.popup input[type="password"]{
-    background-color: #c0bebe;
-    color: #000000;
-    padding: 10px;
-    border: #000000 1px solid;
-    border-radius: 5px;
-    width: calc(100% - 22px);
-    font-size: 16px;
-    margin-left: 0;
-}
-
 .popup-button {
-    background-color: rgb(59, 59, 68);
-    color: white;
-    border: 1px solid white;
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--popup-text);
+    border: 1px solid var(--popup-text);
     font-size: 13px;
     cursor: pointer;
     padding: 5px 10px;
     border-radius: 5px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, transform 0.2s;
     width: 125px;
     margin-left: 0;
 }
 
 .popup-button:hover {
-    background-color: #ffffff;
-    color: black;
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
 }
 
-.progression-gradient {
-    height: 80%;
-    width: 10px;
-    margin-top: 20px;
+.settings-button {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: var(--popup-text);
+    border: 1px solid var(--popup-text);
+    font-size: var(--font-size-nav-button, 13px);
+    cursor: pointer;
+    padding: 8px 10px;
     border-radius: 5px;
-    justify-self: center;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.settings-button:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+    transform: translateY(-1px);
+}
+
+/* User info specifically in popup */
+.user-info {
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.user-info p {
+    font-size: 14px;
+    color: var(--popup-text);
 }
 
 /* mobile styling */
 @media (max-width: 768px) {
-    .nav-button-container {
+    #main-window {
+        flex-direction: column;
+        gap: 30px;
+        padding: 20px;
+    }
+    
+    #main-window > * {
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 20px;
+        margin: 0;
+    }
+    
+    .course-display {
+        gap: 20px;
+    }
+
+    /* Improved mobile navigation */
+    .nav-element {
         flex-direction: row;
-        align-items: flex-start;
+        justify-content: space-between;
+        height: auto;
+        padding: 12px 15px;
+        flex-wrap: nowrap;
+        gap: 10px;
     }
 
     .nav-title-container {
-        flex-direction: column;
+        flex: 0;
+        flex-direction: row;
         gap: 10px;
+        margin-right: auto;
+    }
+    
+    /* Hide the text content of h1 but keep the icon */
+    .nav-title-container h1 {
+        font-size: 0;
+    }
+    
+    .nav-title-container h1 i {
+        font-size: 24px;
+    }
+    
+    .nav-button-container {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        gap: 8px;
+    }
+    
+    .nav-button-container button {
+        width: auto;
+        padding: 6px 10px;
+        font-size: 12px;
+        flex-shrink: 0;
+    }
+    
+    #settings-navbtn {
+        width: 28px;
+        height: 28px;
     }
 
-    .nav-element {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-    }
-
+    /* Improved graph box for mobile */
     .graphbox {
         flex-direction: column;
-        height: auto;
-        width: auto;
+        height: auto !important;
+        width: 100%;
+        padding: 15px;
+        margin-bottom: 20px;
     }
 
+    /* Canvas sizing for mobile - not stretching */
     .graphbox canvas {
-        height: auto;
+        height: 300px !important;
+        width: 100% !important;
+        aspect-ratio: auto !important;
+        object-fit: contain;
+        max-width: 100%;
     }
 
     .overall-course-statistics {
         flex-direction: column;
         gap: 20px;
+        width: 100%;
     }
 
     .overall-statistics-content {
@@ -499,37 +1028,746 @@ h2.title {
         padding: 6px;
     }
 
-    .popup {
-        width: 90%;
-        margin: 20px auto;
+    /* Make popups full screen on mobile */
+    .popup,
+    .login-popup,
+    .signup-popup,
+    .settings-popup {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 30px 15px;
+        box-sizing: border-box;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 9999;
+        overflow-y: auto;
     }
-
-    #save-navbtn {
-        display: none;
+    
+    .close-popup,
+    #close-login-popup,
+    #close-signup-popup,
+    #close-settings-popup {
+        position: absolute;
+        top: 15px;
+        right: 15px;
     }
-
-    #load-navbtn {
-        display: none;
+    
+    /* Ensure form elements are properly sized on mobile */
+    .popup input[type="text"],
+    .popup input[type="number"],
+    .popup input[type="email"],
+    .popup input[type="password"],
+    .popup select {
+        width: 100%;
+        box-sizing: border-box;
     }
-
-    .replica-course-container {
-        width: 92%;
+    
+    .popup-button,
+    .settings-button {
+        width: 100%;
+        margin: 10px 0;
     }
+    
+    /* Adjust the graph buttons for smaller screens */
+    .graph-button-box {
+        flex-wrap: wrap;
+    }
+    
+    .graph-button {
+        flex: 1;
+        min-width: 90px;
+        text-align: center;
+        padding: 8px 5px;
+        font-size: 12px;
+    }
+}
 
+.theme-selector {
+    margin-right: 15px;
+}
+
+.theme-selector select {
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    border: 1px solid var(--nav-text);
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 13px;
+    cursor: pointer;
+}
+
+.theme-selector select:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.theme-selector select option {
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+}
+
+.settings-popup {
+    max-width: 350px;
+    overflow-y: auto;
+}
+
+.settings-section {
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.settings-section:last-child {
+    border-bottom: none;
+}
+
+.settings-section h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.user-info {
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 15px;
+}
+
+.user-info p {
+    font-size: 14px;
+}
+
+.setting-item {
+    margin-bottom: 14px;
+}
+
+.setting-item label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: var(--nav-text);
+}
+
+.settings-button {
+    background-color: var(--nav-bg);
+    color: var(--nav-text);
+    border: 1px solid var(--nav-text);
+    font-size: 13px;
+    cursor: pointer;
+    padding: 8px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.settings-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#settings-navbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 26px; 
+    height: 26px;
+    font-size: 16px;
+}
+
+/* Font size classes */
+body.font-small {
+    --font-size-base: 14px;
+    --font-size-h1: 22px;
+    --font-size-h2: 18px;
+    --font-size-h3: 16px;
+    --font-size-h4: 15px;
+    --font-size-p: 14px;
+    --font-size-stat-value: 18px;
+    --font-size-stat-label: 12px;
+    --font-size-course-stat-value: 18px;
+    --font-size-course-stat-label: 12px;
+    --font-size-nav-button: 12px;
+    --font-size-title: 20px;
+    --font-size-subtitle: 16px;
+}
+
+body.font-medium {
+    --font-size-base: 16px;
+    --font-size-h1: 25px;
+    --font-size-h2: 20px;
+    --font-size-h3: 18px;
+    --font-size-h4: 16px;
+    --font-size-p: 16px;
+    --font-size-stat-value: 20px;
+    --font-size-stat-label: 14px;
+    --font-size-course-stat-value: 20px;
+    --font-size-course-stat-label: 13px;
+    --font-size-nav-button: 13px;
+    --font-size-title: 22px;
+    --font-size-subtitle: 18px;
+}
+
+body.font-large {
+    --font-size-base: 18px;
+    --font-size-h1: 28px;
+    --font-size-h2: 22px;
+    --font-size-h3: 20px;
+    --font-size-h4: 18px;
+    --font-size-p: 18px;
+    --font-size-stat-value: 22px;
+    --font-size-stat-label: 15px;
+    --font-size-course-stat-value: 22px;
+    --font-size-course-stat-label: 14px;
+    --font-size-nav-button: 14px;
+    --font-size-title: 24px;
+    --font-size-subtitle: 20px;
+}
+
+/* Apply font sizes to all headings and text elements */
+h1 {
+    font-size: var(--font-size-h1, 25px);
+    color: var(--title-text);
+    font-weight: bold;
+    margin: 0;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: var(--font-size-h2, 20px);
+}
+
+h3 {
+    font-size: var(--font-size-h3, 18px);
+}
+
+h4 {
+    font-size: var(--font-size-h4, 16px);
+}
+
+p {
+    font-size: var(--font-size-p, 16px);
+}
+
+.title {
+    font-size: var(--font-size-title, 24px);
+}
+
+.card h2.title {
+    font-size: var(--font-size-title, 22px);
+}
+
+.nav-button-container button {
+    font-size: var(--font-size-nav-button, 13px);
+}
+
+.stat-value {
+    font-size: var(--font-size-stat-value, 20px);
+}
+
+.stat-label {
+    font-size: var(--font-size-stat-label, 14px);
+}
+
+.course-stat-value {
+    font-size: var(--font-size-course-stat-value, 20px);
+}
+
+.course-stat-label {
+    font-size: var(--font-size-course-stat-label, 13px);
+}
+
+.stats-section h3 {
+    font-size: var(--font-size-h3, 18px);
+}
+
+.settings-section h3 {
+    font-size: var(--font-size-h3, 18px);
+}
+
+.popup h2 {
+    font-size: var(--font-size-h2, 22px);
+}
+
+.collapsed-view {
+    font-size: var(--font-size-p, 16px);
+}
+
+.graph-button {
+    font-size: var(--font-size-nav-button, 14px);
+}
+
+#graph-title {
+    font-size: var(--font-size-subtitle, 18px);
+}
+
+/* Make sure table cells also adjust */
+.assignments-table th, 
+.assignments-table td {
+    font-size: var(--font-size-p, 16px);
+}
+
+/* Desktop layout - side by side for larger screens */
+@media (min-width: 1200px) {
+    #main-window {
+        grid-template-columns: minmax(380px, 40%) 1fr;
+        grid-template-areas: 
+            "stats courses"
+            "stats add-course";
+        gap: 40px;
+    }
+    
+    #main-window .overall-course-statistics {
+        margin-bottom: 0;
+        position: sticky;
+        top: 70px;
+        align-self: start;
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
+        transition: all 0.3s ease;
+    }
+}
+
+/* Fix text colors for different themes */
+/* Dark theme text fixes - ensure all text is light on dark background */
+body.dark-theme {
+    color: #e1e1e1;
+}
+
+body.dark-theme .course-statistics p,
+body.dark-theme .card .collapsed-view,
+body.dark-theme h2,
+body.dark-theme .course-statistics h2,
+body.dark-theme .assignments-table td,
+body.dark-theme .assignments-table th,
+body.dark-theme .stat-value,
+body.dark-theme .stat-label,
+body.dark-theme .editable {
+    color: #e1e1e1;
+}
+
+body.dark-theme .card .grades p,
+body.dark-theme .card .grades p strong {
+    color: #e1e1e1;
+}
+
+body.dark-theme #graph-title,
+body.dark-theme .stats-section h3 {
+    color: #e1e1e1;
+}
+
+/* Minimal (light) theme text fixes - ensure all text is dark on light background */
+body.minimal-theme {
+    color: #111827;
+}
+
+body.minimal-theme .course-statistics p,
+body.minimal-theme .card .collapsed-view,
+body.minimal-theme h2,
+body.minimal-theme .course-statistics h2,
+body.minimal-theme .assignments-table td,
+body.minimal-theme .assignments-table th,
+body.minimal-theme .editable {
+    color: #111827;
+}
+
+body.minimal-theme .stat-value {
+    color: #111827;
+}
+
+body.minimal-theme .stat-label {
+    color: #4b5563;
+}
+
+body.minimal-theme .card .grades p,
+body.minimal-theme .card .grades p strong {
+    color: #111827;
+}
+
+body.minimal-theme #graph-title,
+body.minimal-theme .stats-section h3 {
+    color: #111827;
+}
+
+/* Make sure inputs and editable content have proper contrast */
+.editable {
+    color: inherit;
+}
+
+/* Redesigned Course Cards */
     .card {
-        width: 92%;
-    }   
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    background-color: var(--card-bg);
+    width: 100%;
+    box-sizing: border-box;
+}
 
-    .overall-course-statistics {
-        width: 92%;
-    }
+.card h2.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: inherit;
+}
 
-    .overall-statistics-content {
-        width: 92%;
-    }
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-    .graphbox {
-        width: 92%;
-    }
+.course-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 12px;
+    border-radius: 8px;
+}
 
+.course-stat-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.course-stat-label {
+    font-size: 13px;
+    opacity: 0.8;
+}
+
+.course-stat-value {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Enhanced assignments table */
+.assignments-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    table-layout: fixed;
+    margin-top: 15px;
+}
+
+.assignments-table th, 
+.assignments-table td {
+    padding: 8px;
+    border: none;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.assignments-table th:nth-child(1),
+.assignments-table td:nth-child(1) {
+    width: 40%;
+}
+
+.assignments-table th:nth-child(2),
+.assignments-table td:nth-child(2),
+.assignments-table th:nth-child(3),
+.assignments-table td:nth-child(3) {
+    width: 20%;
+    text-align: center;
+}
+
+.assignments-table th:nth-child(4),
+.assignments-table td:nth-child(4) {
+    width: 20%;
+    text-align: center;
+}
+
+.assignments-table td {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: var(--table-cell);
+}
+
+.assignments-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Course operations buttons */
+.card .course-operation-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.add-assignment {
+    background-color: var(--button-primary);
+    color: white;
+    cursor: pointer;
+    font-weight: normal;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.add-assignment:hover {
+    background-color: var(--button-hover);
+}
+
+.delete-course-button-show, .delete-course-button {
+    background-color: #ec8888;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 8px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.delete-course-button-show:hover, .delete-course-button:hover {
+    background-color: #f4bcbc;
+}
+
+.delete-assignment {
+    padding: 5px 8px;
+    border-radius: 4px;
+    background-color: #ec8888;
+    border: none;
+    color: white;
+}
+
+/* Course progress bar */
+.course-progress-container {
+    height: 6px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.course-progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--button-primary) 0%, var(--button-hover) 100%);
+    border-radius: 3px;
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Collapsed view styling */
+.card .collapsed-view {
+    display: none;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.card .collapsed-view span {
+    padding: 4px 8px;
+    background-color: var(--button-primary);
+    color: white;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+/* Text color fixes for graph area */
+#graph-title {
+    margin-top: 30px;
+    color: inherit;
+}
+
+/* Fix for table text colors */
+body.dark-theme .assignments-table th {
+    color: #e1e1e1;
+}
+
+body.dark-theme .assignments-table td {
+    color: #e1e1e1;
+}
+
+body.oceanic-theme .assignments-table th,
+body.oceanic-theme .assignments-table td {
+    color: #0c4a6e;
+}
+
+body.warm-theme .assignments-table th,
+body.warm-theme .assignments-table td {
+    color: #92400e;
+}
+
+body.minimal-theme .assignments-table th,
+body.minimal-theme .assignments-table td {
+    color: #111827;
+}
+
+/* Assignment display */
+.card .assignments {
+    display: block;
+    margin-bottom: 25px;
+}
+
+/* Theme-specific styling for stats sections */
+body.dark-theme .stats-section {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+body.dark-theme .stat-label {
+    color: #a0a0a0;
+}
+
+body.dark-theme .stat-value {
+    color: #ffffff;
+}
+
+body.oceanic-theme .stats-section {
+    background-color: rgba(12, 74, 110, 0.05);
+}
+
+body.oceanic-theme .stat-label {
+    color: #0c4a6e;
+}
+
+body.oceanic-theme .stat-value {
+    color: #0c4a6e;
+}
+
+body.warm-theme .stats-section {
+    background-color: rgba(146, 64, 14, 0.05);
+}
+
+body.warm-theme .stat-label {
+    color: #92400e;
+}
+
+body.warm-theme .stat-value {
+    color: #92400e;
+}
+
+body.minimal-theme .stats-section {
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+body.minimal-theme .stat-label {
+    color: #4b5563;
+}
+
+body.minimal-theme .stat-value {
+    color: #111827;
+}
+
+/* Default theme styling for stats */
+.stats-section {
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.stat-label {
+    color: #555;
+}
+
+.stat-value {
+    color: #333;
+}
+
+/* Improved graph button styling */
+.graph-button-box {
+    display: flex;
+    justify-content: left;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.graph-button {
+    background-color: var(--graph-btn-bg);
+    color: var(--graph-btn-text);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+.graph-button:hover {
+    background-color: var(--button-hover);
+}
+
+/* More professional progress bar */
+.progress-bar-container {
+    height: 8px;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    margin: 15px 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--button-primary) 0%, var(--button-hover) 100%);
+    border-radius: 4px;
+    width: 0%;
+    transition: width 0.5s ease-in-out;
+}
+
+/* Fix text colors specifically for low contrast theme */
+body.low-contrast-theme .assignments-table th,
+body.low-contrast-theme .assignments-table td {
+    color: #777777;
+}
+
+body.low-contrast-theme .stat-label {
+    color: #555555;
+}
+
+body.low-contrast-theme .stat-value {
+    color: #777777;
+}
+
+body.low-contrast-theme .graph-button {
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+body.low-contrast-theme .card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.low-contrast-theme .collapse-arrow {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+body.low-contrast-theme .progress-bar {
+    background: linear-gradient(90deg, #3a4a40 0%, #4a6051 100%);
+}
+
+body.low-contrast-theme .course-progress-bar {
+    background: linear-gradient(90deg, #3a4a40 0%, #4a6051 100%);
+}
+
+body.low-contrast-theme h1,
+body.low-contrast-theme h2,
+body.low-contrast-theme h3,
+body.low-contrast-theme h4,
+body.low-contrast-theme h5,
+body.low-contrast-theme h6 {
+    color: #888888;
+}
+
+body.low-contrast-theme .course-stat-label {
+    color: #555555;
+}
+
+body.low-contrast-theme .course-stat-value {
+    color: #777777;
+}
+
+body.low-contrast-theme .delete-course-button-show, 
+body.low-contrast-theme .delete-course-button,
+body.low-contrast-theme .delete-assignment {
+    background-color: #4d3838;
+}
+
+body.low-contrast-theme .delete-course-button-show:hover, 
+body.low-contrast-theme .delete-course-button:hover,
+body.low-contrast-theme .delete-assignment:hover {
+    background-color: #5a4242;
 }

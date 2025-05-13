@@ -9,6 +9,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-5NDDY4FDVL"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-5NDDY4FDVL');
+</script>
+
 <body>
 
     <!-- Nav, contains title and meta operation buttons -->
@@ -18,6 +28,7 @@
         </div>
 
         <div class="nav-button-container">
+            <button id="settings-navbtn" title="Settings"><i class="fa fa-gear"></i></button>
             <button id="cloud-save-navbtn" class="logged-in" style="display: none;" title="Save data to your account">Cloud Save&nbsp;&nbsp;&nbsp;<i class="fa fa-cloud"></i></button>
             <button id="login-navbtn" class="logged-out">Log in&nbsp;&nbsp;&nbsp;<i class="fa fa-sign-in"></i></button>
             <button id="signup-navbtn" class="logged-out">Sign up&nbsp;&nbsp;&nbsp;<i class="fa fa-user-plus"></i></button>
@@ -37,7 +48,7 @@
         <div class="overall-course-statistics">
             <div class="collapse-container">
                 <h2 class="title" contenteditable="true" data-type="title" data-id="overall-statistics-title">Overall Course Stats</h2>
-                <span class="collapse-arrow" onclick="toggleOverallStats()">&#9650;</span> <!-- Initially pointing downwards -->
+                <span class="collapse-arrow" onclick="toggleOverallStats()">&#9650;</span>
             </div>
 
             <!-- collapsed view -->
@@ -49,43 +60,89 @@
 
             <!-- expanded view -->
             <div class="overall-statistics-content">
-                <div class="course-statistics">
-                    <h2>Overall Grade:</h2>
-                    <p id="overall-grade">N/A</p>
+                <!-- Primary Stats Section -->
+                <div class="stats-section">
+                    <h3>Summary</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-label">Overall Grade</div>
+                            <div class="stat-value" id="overall-grade">N/A</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Courses</div>
+                            <div class="stat-value" id="course-count">0</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Weight</div>
+                            <div class="stat-value" id="overall-completed-weight">N/A</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Assignments</div>
+                            <div class="stat-value" id="overall-assignments-complete">N/A</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="course-statistics">
-                    <h2>Completed Weight:</h2>
-                    <p id="overall-completed-weight">N/A</p>
-                </div>
-                <div class="course-statistics">
-                    <h2>Assignments Completed:</h2>
-                    <p id="overall-assignments-complete">N/A</p>
-                </div>
-            </div>
 
-            <!-- self explanitory -->
-            <h2 id="graph-title" style="margin-top: 30px">Graphs</h2>
-            <div id="graph-button-box" class="graph-button-box">
-                <button class="graph-button" id="graph-grades-button">Grades</button>
-                <button class="graph-button" id="graph-weight-button">Weight</button>
-                <button class="graph-button" id="graph-completion-button">Completion</button>
+                <!-- Performance Section -->
+                <div class="stats-section">
+                    <h3>Performance</h3>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-label">Highest Grade</div>
+                            <div class="stat-value" id="highest-grade">N/A</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Lowest Grade</div>
+                            <div class="stat-value" id="lowest-grade">N/A</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Graph Section -->
+                <div class="stats-section">
+                    <h3>Visual Analysis</h3>
+                    <div id="graph-button-box" class="graph-button-box">
+                        <button class="graph-button" id="graph-grades-button">Grades</button>
+                        <button class="graph-button" id="graph-weight-button">Weight</button>
+                        <button class="graph-button" id="graph-completion-button">Completion</button>
+                    </div>
+                    <div class="graphbox"></div>
+                </div>
+                
+                <!-- Progress Section - Moved under graph -->
+                <div class="stats-section">
+                    <h3>Progress</h3>
+                    <div class="progress-bar-container">
+                        <div id="overall-progress-bar" class="progress-bar"></div>
+                    </div>
+                    <div class="stats-grid">
+                        <div class="stat-item">
+                            <div class="stat-label">Completion</div>
+                            <div class="stat-value" id="overall-progress">0%</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-label">Time Remaining</div>
+                            <div class="stat-value" id="time-remaining">Set in settings</div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="graphbox" style="resize: both; overflow: auto;"></div>
         </div>
+            <div class="course-display-container">
+            <!-- container for all course elements -->
+            <div class="course-display"></div>
 
-        <!-- container for all course elements -->
-        <div class="course-display"></div>
-
-        <!-- container for add-course button -->
-        <div class="replica-course-container">
-            <button class="add-assignment" id="add-course-btn" class="add-course-btn">Add Course +</button>
+            <!-- container for add-course button -->
+            <div class="replica-course-container">
+                <button class="add-assignment" id="add-course-btn" class="add-course-btn">Add Course +</button>
+            </div>
         </div>
     </div>
 
     <!-- popup for login / signup -->
     <div class="popup login-popup">
         <span id="close-login-popup" class="close-popup">&times;</span>
-        <h2 style="color: white;">Log in</h2><br/>
+        <h2>Log in</h2><br/>
         <form id="login-form">
             <div class="input">
                 <input type="email" id="login-email" placeholder = "Email" required />
@@ -99,7 +156,7 @@
 
     <div class="popup signup-popup">
         <span id="close-signup-popup" class="close-popup">&times;</span>
-        <h2 style="color: white;">Sign up</h2><br/>
+        <h2>Sign up</h2><br/>
         <form id="signup-form">
             <div class="input">
                 <input type="email" id="signup-email" placeholder = "Email" required />
@@ -109,6 +166,54 @@
             </div>
             <button class="popup-button">Sign up</button>
         </form>
+    </div>
+
+    <!-- Settings Popup -->
+    <div class="popup settings-popup">
+        <span id="close-settings-popup" class="close-popup">&times;</span>
+        <h2>Settings</h2>
+        <div class="user-info">
+            <p>Logged in as: <span id="user-email">Guest</span></p>
+        </div>
+        <div class="settings-section">
+            <h3>Theme</h3>
+            <div class="theme-selector">
+                <select id="theme-selector">
+                    <option value="default">Default Theme</option>
+                    <option value="dark-theme">Dark Theme</option>
+                    <option value="oceanic-theme">Oceanic Theme</option>
+                    <option value="warm-theme">Warm Theme</option>
+                    <option value="minimal-theme">Minimal Theme</option>
+                    <option value="low-contrast-theme">Low Contrast Theme</option>
+                </select>
+            </div>
+        </div>
+        <div class="settings-section">
+            <h3>Data Management</h3>
+            <button id="export-data" class="settings-button">Export Data</button>
+            <button id="import-data" class="settings-button">Import Data</button>
+            <button id="clear-data" class="settings-button">Clear All Data</button>
+        </div>
+        <div class="settings-section">
+            <h3>Display Options</h3>
+            <div class="setting-item">
+                <label for="font-size">Font Size:</label>
+                <select id="font-size">
+                    <option value="small">Small</option>
+                    <option value="medium" selected>Medium</option>
+                    <option value="large">Large</option>
+                </select>
+            </div>
+            <div class="setting-item">
+                <label for="end-date">Term End Date:</label>
+                <input type="date" id="end-date">
+            </div>
+        </div>
+        <div class="settings-section">
+            <h3>About</h3>
+            <p>Gradebook v3.0</p>
+            <p>© 2025 M. Barney</p>
+        </div>
     </div>
 
     <script src="./JS/main.js"></script>
